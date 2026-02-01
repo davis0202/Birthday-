@@ -1,0 +1,40 @@
+// MUSIC
+function toggleMusic() {
+  const music = document.getElementById("bgMusic");
+  music.paused ? music.play() : music.pause();
+}
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+
+// COUNTDOWN (SET DATE)
+const birthday = new Date("2026-02-01T00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = birthday - now;
+  const timer = document.getElementById("timer");
+
+  if (diff <= 0) {
+    timer.innerHTML = `
+      <img src="photos/photo1.jpg" style="width:220px;border-radius:20px;margin-top:20px;">
+      <p style="margin-top:20px;">It’s your day 💖</p>
+    `;
+    return;
+  }
+
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const m = Math.floor((diff / (1000 * 60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  timer.innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+}, 1000);
