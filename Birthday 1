@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="fade-in">Hey <span>Beautiful</span></h1>
+  <p class="fade-in delay">
+    Today isn’t just your birthday.<br>
+    It’s the day the world got lucky.
+  </p>
+  <div class="scroll-hint">↓ scroll slowly</div>
+</section>
+
+<!-- HERO PHOTO -->
+<section class="hero-photo hidden">
+  <img src="photos/photo1.jpg" alt="Us">
+  <p class="caption">My favorite view.</p>
+</section>
+
+<!-- MEMORIES -->
+<section class="memories hidden">
+  <h2>Moments I Hold Close</h2>
+
+  <div class="memory left">
+    <img src="photos/photo2.jpg">
+    <p>Sunlight, simplicity, and us.</p>
+  </div>
+
+  <div class="memory right">
+    <img src="photos/photo3.jpg">
+    <p>This smile fixes everything.</p>
+  </div>
+
+  <div class="memory left">
+    <img src="photos/photo4.jpg">
+    <p>Proof that happiness looks like you.</p>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown hidden">
+  <h2>Something special arrives in</h2>
+  <div id="timer">Loading…</div>
+</section>
+
+<!-- FINAL -->
+<section class="final hidden">
+  <h1>Happy Birthday 🎂</h1>
+  <p class="letter">
+    You are loved more than words allow.<br>
+    Today, tomorrow, always.<br>
+    I’m here.
+  </p>
+  <p class="signature">— Yours 🤍</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
